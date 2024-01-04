@@ -6,10 +6,15 @@
 /*   By: jfidalgo <jfidalgo@student.42bar(...).com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 10:27:59 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/04 10:38:42 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/04 10:55:10 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
+
+void	ft_putchar(char character)
+{
+	write (1, &character, 1);
+}
 
 void	ft_print_alphabet(void)
 {
@@ -18,7 +23,7 @@ void	ft_print_alphabet(void)
 	letter = 'a';
 	while (letter <= 'z')
 	{
-		write (1, &letter, 1);
+		ft_putchar(letter);
 		letter++;
 	}
 }
