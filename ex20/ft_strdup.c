@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42bar(...).com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 09:16:47 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/07 09:42:00 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/07 21:32:05 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ char	*ft_strdup(char *src)
 	int		i;
 
 	result = malloc(ft_strlen(src) + 1);
+	if (result == NULL)
+		return (NULL);
 	i = 0;
 	while (src[i] != '\0')
 	{
