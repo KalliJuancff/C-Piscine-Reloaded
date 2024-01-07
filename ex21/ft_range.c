@@ -6,7 +6,7 @@
 /*   By: jfidalgo <jfidalgo@student.42bar(...).com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 09:48:19 by jfidalgo          #+#    #+#             */
-/*   Updated: 2024/01/07 10:01:33 by jfidalgo         ###   ########.fr       */
+/*   Updated: 2024/01/07 10:20:13 by jfidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ int	*ft_range(int min, int max)
 	int	*result;
 	int	i;
 
-	result = malloc (sizeof(int) * (max - min + 1));
+	if (min >= max)
+		return (NULL);
+	result = malloc (sizeof(int) * (max - min));
 	i = min;
-	while (i <= max)
+	while (i < max)
 	{
 		result[i - min] = i;
 		i++;
@@ -36,7 +38,7 @@ int	main(void)
 
 	numbers = ft_range(30, 40);
 	i = 30;
-	while (i <= 40)
+	while (i < 40)
 	{
 		printf("%d\n", numbers[i - 30]);
 		i++;
